@@ -1,0 +1,85 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background: #56b870; /* Old browsers */
+  background: -moz-linear-gradient(right, #2f4f4f 66%, mediumpurple 100%); /* FF3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(66%, #2f4f4f),
+    color-stop(100%, mediumpurple)
+  ); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(
+    160deg,
+    #333 0%,
+    #333 65%,
+    #fa824c 65%,
+    #fa824c 67%,
+    #3c91e6 67%,
+    #3c91e6 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(
+    right,
+    #2f4f4f 0%,
+    mediumpurple 100%
+  ); /* Opera 11.10+ */
+  background: -ms-linear-gradient(right, #2f4f4f 0%, mediumpurple 100%); /* IE10+ */
+  background: linear-gradient(right, #2f4f4f 0%, mediumpurple 100%); /* W3C */
+}
+
+header {
+  background: #444444;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-family: FreeMono, monospace;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  font-size: 1.4em;
+  margin: 0;
+  color: #fa824c;
+}
+
+nav ul li a {
+  font-family: 'Alegreya Sans SC';
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+nav ul li a:hover {
+  color: #f7a179;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+section {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+footer {
+  background: #444444;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
