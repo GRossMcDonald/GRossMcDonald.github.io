@@ -127,6 +127,7 @@ nav ul li a:hover {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
   padding: 1rem;
+  padding-bottom: 80px;
 }
 
 section {
@@ -157,4 +158,8 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+main {
+    padding-bottom: 80px;
 }
