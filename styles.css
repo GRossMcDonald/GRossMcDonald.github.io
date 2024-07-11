@@ -78,6 +78,14 @@ h1 {
   padding-bottom: 10px;
 }
 
+@media (max-width: 600px) {
+    h1 {
+      font-size: 1.5em;
+      transform: scaleY(1.5);
+      letter-spacing: 5px;
+    }
+}
+
 h2 {
   text-align: center;
 }
