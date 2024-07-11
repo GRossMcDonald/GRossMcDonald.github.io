@@ -1,43 +1,85 @@
 body {
   box-sizing: border-box;
   margin: 0;
-  background: #56b870; /* Old browsers */
-  background: -moz-linear-gradient(right, #2f4f4f 66%, mediumpurple 100%); /* FF3.6+ */
+  background: -moz-linear-gradient(
+    160deg,
+    #333 0%,
+    #333 75%,
+    #fa824c 75%,
+    #fa824c 77%,
+    #3c91e6 77%,
+    #3c91e6 100%
+  ); /* FF3.6+ */
   background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(66%, #2f4f4f),
-    color-stop(100%, mediumpurple)
+    160deg,
+    #333 0%,
+    #333 75%,
+    #fa824c 75%,
+    #fa824c 77%,
+    #3c91e6 77%,
+    #3c91e6 100%
   ); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(
     160deg,
     #333 0%,
-    #333 65%,
-    #fa824c 65%,
-    #fa824c 67%,
-    #3c91e6 67%,
+    #333 75%,
+    #fa824c 75%,
+    #fa824c 77%,
+    #3c91e6 77%,
     #3c91e6 100%
   ); /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(
-    right,
-    #2f4f4f 0%,
-    mediumpurple 100%
+    160deg,
+    #333 0%,
+    #333 75%,
+    #fa824c 75%,
+    #fa824c 77%,
+    #3c91e6 77%,
+    #3c91e6 100%
   ); /* Opera 11.10+ */
-  background: -ms-linear-gradient(right, #2f4f4f 0%, mediumpurple 100%); /* IE10+ */
-  background: linear-gradient(right, #2f4f4f 0%, mediumpurple 100%); /* W3C */
+  background: -ms-linear-gradient(
+    160deg,
+    #333 0%,
+    #333 75%,
+    #fa824c 75%,
+    #fa824c 77%,
+    #3c91e6 77%,
+    #3c91e6 100%
+  ); /* IE10+ */
+  background: linear-gradient(
+    /*Erasing this (deg) makes it one straight horizontal line, 
+    adding a comma changes the trajectory, 
+    for whatever reason 285 keeps it more or less the same.*/
+      285deg,
+    #333 0%,
+    #333 75%,
+    #fa824c 75%,
+    #fa824c 77%,
+    #3c91e6 77%,
+    #3c91e6 100%
+  ); /* W3C */
 }
 
 header {
   background: #444444;
-  color: #fff;
+  color: #fafffd;
   padding: 1rem 0;
   text-align: center;
 }
 
 h1 {
   text-align: center;
-  font-family: FreeMono, monospace;
+  font-family: "Courier New", monospace;
+  font-weight: 100;
+  color: #fafffd;
+  letter-spacing: 10px;
+  transform: scaleY(2.5);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
 }
 
 nav ul {
@@ -45,19 +87,39 @@ nav ul {
   list-style: none;
   font-size: 1.4em;
   margin: 0;
-  color: #fa824c;
+  color: #fafffd;
+  justify-content: center;
 }
 
 nav ul li a {
-  font-family: 'Alegreya Sans SC';
+  font-family: "Alegreya Sans SC";
   padding: 20px;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fa824c;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 nav ul li a:hover {
-  color: #f7a179;
+  color: #fa824c;
 }
 
 #container {
@@ -73,13 +135,26 @@ section {
   border-radius: 8px;
 }
 
+.my-face {
+  border-radius: 10px;
+  display: flex;
+}
+
+.screenshot:hover {
+  margin: auto;
+  display: block;
+  width: max-content;
+  height: max-content;
+  z-index: 1;
+  position: relative;
+}
+
 footer {
   background: #444444;
-  color: #fff;
+  color: #fafffd;
   text-align: center;
   padding: 1rem 0;
   position: fixed;
   width: 100%;
   bottom: 0;
 }
-
