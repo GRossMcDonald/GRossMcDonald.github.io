@@ -89,6 +89,9 @@ h1 {
       transform: scaleY(1.5);
       letter-spacing: 5px;
     }
+    nav ul li {
+      margin: 5px;
+    }
 }
 
 h2 {
@@ -155,14 +158,14 @@ section {
   display: flex;
 }
 
-.screenshot:hover {
+/*.screenshot:hover {
   margin: auto;
   display: block;
   width: max-content;
   height: max-content;
   z-index: 1;
   position: relative;
-}
+}*/
 
 footer {
   background: #444444;
