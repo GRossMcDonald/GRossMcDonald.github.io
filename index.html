@@ -13,19 +13,30 @@
   <body>
     <header>
       <nav>
-        <ul>
+        <ul class="menu">
           <li><a href="#about">About Me</a></li>
           <li><a href="#projects">My Projects</a></li>
           <li><a href="#contact">Contact Me</a></li>
         </ul>
+        <ul class="side-menu">
+          <li><a href="#background">Background</a></li>
+          <li><a href="#skills"></a>Skills</li>
+          <li><a href="#projects"></a>Projects</li>
+        </ul>
       </nav>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
     <main>
       <h1>(Geoffrey) Ross McDonald</h1>
       <div id="container">
         <section id="about">
           <h2>About Me</h2>
-          <img
+          <article>
+            <img
             src="/image/My Face.jpg"
             alt="Picture of Me."
             width="200px"
@@ -33,20 +44,46 @@
             class="my-face"
           />
           <p>Welcome to my portfolio.</p>
-          <p>
+          <p id="background">
             I am a We Can Code It student with a background in political
             science. I graduated from OSU with a bachelors in political science.
             Since then I've aspired to become a video game developer. I'm
             currently honing my skills in backend and frontend programming
             languages.
           </p>
-          <h3>Skills</h3>
-          <ul>
+          <h3 id="skills">Skills</h3>
+          <ul class="skill-list">
             <li>HTML</li>
             <li>CSS</li>
             <li>Java</li>
             <li>Spring Boot</li>
+            <li>JavaScript</li>
           </ul>
+          </article>
+          <button id="fun-facts-button">Click For Fun Facts About Me</button>
+          <p id="fun-facts">Click the button for some random fun facts!</p>
+          <div id="slideshow-container">
+            <div id="slides">
+              <div class="slide">
+                <img src="/image/image1.jpg" alt="Image 1">
+                <p class="caption">My twin sister and I. Yes, I drank Corona before 2020.</p>
+              </div>
+              <div class="slide">
+                <img src="/image/image2.jpg" alt="Image 2">
+                <p class="caption">My twin Madison (left) and my younger sister Alexa (right) on our trip to France.</p>
+              </div>
+              <div class="slide">
+                <img src="/image/image3.jpg" alt="Image 3">
+                <p class="caption">My gorgeous blurry photo of Saint Tropez.</p>
+              </div>
+              <div class="slide">
+                <img src="/image/image4.jpg" alt="Image 4">
+                <p class="caption">I had a staring contest with the eclipse. I now code in braille.</p>
+              </div>
+              <button class="prev">&#10094</button>
+              <button class="next">&#10095</button>
+            </div>
+          </div>
         </section>
 
         <section id="projects">
@@ -127,5 +164,6 @@
     <footer>
       <p>&copy; 2024 Ross McDonald</p>
     </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
