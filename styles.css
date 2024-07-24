@@ -54,8 +54,8 @@ body {
   ); /* IE10+ */
   background: linear-gradient(
     /*Erasing this (deg) makes it one straight horizontal line, 
-      adding a comma changes the trajectory, 
-      for whatever reason 285 keeps it more or less the same.*/
+        adding a comma changes the trajectory, 
+        for whatever reason 285 keeps it more or less the same.*/
       285deg,
     #333 0%,
     #333 75%,
@@ -68,15 +68,20 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background: #444444;
   color: #fafffd;
-  padding: 1rem 0;
+  padding: 1em 0;
   text-align: center;
-  padding: 10px;
   font-size: large;
-  z-index: 2;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex: 1;
 }
 
 h1 {
@@ -219,11 +224,24 @@ article img {
 
 nav ul li a {
   font-family: "Alegreya Sans SC";
-  padding: 2em;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   position: relative;
+  padding: 10px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  font-size: 1.4em;
+  margin: 0;
+  padding: 0;
+  color: #fafffd;
+}
+
+.menu li {
+  padding: 1em;
 }
 
 nav .menu li a::after {
@@ -248,44 +266,18 @@ nav .menu li a:hover {
   color: #fa824c;
 }
 
-.side-menu {
-  background-color: rgba(67, 175, 57, 0.616);
-  height: 100vh;
-  width: 100%;
-  max-width: 20rem;
-  position: fixed;
-  top: 0;
-  right: -20rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  text-align: center;
-  font-size: 3rem;
-  transition: 0.3s ease;
-  z-index: auto;
-}
-
-.side-menu li {
-  border: #000000;
-}
-
-.side-menu.active {
-  right: 0;
-}
-
-nav.side-menu {
-  padding: 1rem;
-  display: flex;
-}
-
 .hamburger {
   height: 50px;
   width: 50px;
-  margin-left: auto;
-  position: relative;
-  z-index: 5;
+  position: absolute;
+  right: 2em;
+  top: 3em;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
 }
 
 .hamburger span {
@@ -307,16 +299,6 @@ nav.side-menu {
   top: 75%;
 }
 
-.menu {
-  display: flex;
-  list-style: none;
-  font-size: 1.4em;
-  margin: 1em;
-  color: #fafffd;
-  justify-content: center;
-  padding: 10px;
-}
-
 .hamburger.active span:nth-child(1) {
   top: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
@@ -329,4 +311,66 @@ nav.side-menu {
 .hamburger.active span:nth-child(3) {
   top: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.hamburger.active {
+  position: fixed;
+}
+
+.side-menu {
+  background-color: rgba(67, 175, 57, 0.781);
+  height: 100vh;
+  width: 100%;
+  max-width: 20rem;
+  position: fixed;
+  top: 0;
+  right: -20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  font-size: 2rem;
+  transition: 0.3s ease;
+  z-index: 9;
+  padding-top: 2em;
+}
+
+.side-menu ul {
+  margin-top: 0;
+}
+
+.side-menu li {
+  padding: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.795);
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  header {
+    width: 100%;
+    background-color: #444444;
+    position: relative;
+    padding: 3em;
+  }
+
+  h1 {
+    padding: 2em;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .hamburger {
+    height: 40px;
+    width: 40px;
+  }
+
+  .hamburger span {
+    height: 0.2em;
+  }
 }
