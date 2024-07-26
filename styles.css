@@ -116,6 +116,7 @@ section {
 }
 
 .my-face {
+  height: auto;
   border-radius: 10px;
   display: flex;
 }
